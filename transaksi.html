@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Transaksi</title></head>
+<body>
+<h2>Transaksi</h2>
+<form method="post">
+<table border="1">
+<tr><th>Nama</th><th>Harga</th><th>Qty</th></tr>
+{% for p in produk %}
+<tr>
+    <td>{{ p.nama }}</td>
+    <td>{{ p.harga }}</td>
+    <td><input type="number" name="qty" value="0">
+        <input type="hidden" name="produk_id" value="{{ p.id }}">
+    </td>
+</tr>
+{% endfor %}
+</table>
+Bayar: <input type="number" name="bayar" required>
+<button type="submit">Simpan dan Cetak</button>
+</form>
+<a href="/dashboard">Kembali</a>
+</body>
+</html>

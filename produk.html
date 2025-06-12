@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Produk</title></head>
+<body>
+<h2>Manajemen Produk</h2>
+<form method="post" action="/produk/tambah">
+    Nama: <input type="text" name="nama">
+    Harga: <input type="number" name="harga">
+    Stok: <input type="number" name="stok">
+    <button type="submit">Tambah</button>
+</form>
+<table border="1">
+<tr><th>Nama</th><th>Harga</th><th>Stok</th></tr>
+{% for item in items %}
+<tr><td>{{ item.nama }}</td><td>{{ item.harga }}</td><td>{{ item.stok }}</td></tr>
+{% endfor %}
+</table>
+<a href="/dashboard">Kembali</a>
+</body>
+</html>

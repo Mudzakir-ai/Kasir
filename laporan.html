@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head><title>Laporan</title></head>
+<body>
+<h2>Laporan Transaksi</h2>
+<a href="/laporan/export">📄 Export Excel</a>
+<table border="1">
+<tr><th>ID</th><th>Total</th><th>Bayar</th><th>Kembali</th><th>Tanggal</th></tr>
+{% for t in data %}
+<tr><td>{{ t.id }}</td><td>{{ t.total }}</td><td>{{ t.bayar }}</td><td>{{ t.kembali }}</td><td>{{ t.tanggal }}</td></tr>
+{% endfor %}
+</table>
+<a href="/dashboard">Kembali</a>
+</body>
+</html>
